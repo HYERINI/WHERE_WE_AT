@@ -6,7 +6,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>웨어위앳</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> -->
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -23,7 +23,7 @@
         <div class="masthead">
             <div class="masthead-content text-white">
                 <div class="container-fluid px-4 px-lg-0">
-                    <h1 class="fst-italic lh-1 mb-4">WHERE WE AT</h1>
+                    <h1 class="fst-italic lh-1 mb-4"><strong>WHERE WE AT</strong></h1>
                     <p class="mb-5">우리는 지금 어디에 있을까?</p>
                     <!-- * * * * * * * * * * * * * * *-->
                     <!-- * * SB Forms Contact Form * *-->
@@ -35,8 +35,9 @@
                     <form id="contactForm" data-sb-form-api-token="API_TOKEN">
                         <!-- Email address input-->
                         <div class="row input-group-newsletter">
-                            <div class="col"><input class="form-control" id="email" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
-                            <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">Notify Me!</button></div>
+                            <div class="col"><input class="form-control" id="email" type="email" placeholder="ID/MAIL" aria-label="ID/MAIL" data-sb-validations="required,id" /></div> 
+                            <div class="col"><input class="form-control" id="email" type="email" placeholder="PASSWORD" aria-label="PASSWORD" data-sb-validations="required,pw"></div>
+                            <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">CLICK!</button></div>
                         </div>
                         <div class="invalid-feedback mt-2" data-sb-feedback="email:required">An email is required.</div>
                         <div class="invalid-feedback mt-2" data-sb-feedback="email:email">Email is not valid.</div>
@@ -46,10 +47,9 @@
                         <!-- has successfully submitted-->
                         <div class="d-none" id="submitSuccessMessage">
                             <div class="text-center mb-3 mt-2">
-                                <div class="fw-bolder">Form submission successful!</div>
+                                <div class="fw-bolder">로그인에 성공하셨습니다</div>
                                 To activate this form, sign up at
                                 <br />
-                                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                             </div>
                         </div>
                         <!-- Submit error message-->
@@ -63,13 +63,13 @@
         </div>
         <!-- Social Icons-->
         <!-- For more icon options, visit https://fontawesome.com/icons?d=gallery&p=2&s=brands-->
-        <div class="social-icons">
+        <!-- <div class="social-icons">
             <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0">
                 <a class="btn btn-dark m-3" href="#!"><i class="fab fa-twitter"></i></a>
                 <a class="btn btn-dark m-3" href="#!"><i class="fab fa-facebook-f"></i></a>
                 <a class="btn btn-dark m-3" href="#!"><i class="fab fa-instagram"></i></a>
             </div>
-        </div>
+        </div> -->
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
