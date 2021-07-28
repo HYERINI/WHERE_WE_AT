@@ -3907,3 +3907,8 @@ input, select, textarea {
 			}
 
 		}
+
+/* 검색창 css */
+.search form {
+	display: flex;
+}
