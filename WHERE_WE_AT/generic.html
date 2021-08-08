@@ -28,10 +28,17 @@
 					<section id="main" class="wrapper">
 						<div class="inner">
 							<h1 class="major">LET YOU INTRODUCE HOT PLACES</h1>
-							<span class="image fit"><img src="images/gps.PNG" alt="" /></span>
-							<p>
-								<span class="image fit"><img src="images/표.PNG" alt="" /></span>
-							</p>
+							<div id="map" style="width: 1160px;height: 600px;"></div>
+							<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b8fba23a7a5816b3d1a32e9a520053c7"></script>
+							<script>
+								var container = document.getElementById('map');
+								var options = {
+									center: new kakao.maps.LatLng(37.5658, 126.9386),
+									level: 4
+								
+								};
+								var map = new kakao.maps.Map(container, options);
+							</script> 
 						</div>
 					</section>
 
