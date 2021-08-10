@@ -16,7 +16,7 @@
 					<ul>
 						<li><a href="index.html">Home</a></li>
 						<li><a href="generic.html" class="active">GPS</a></li>
-						<li><a href="elements.html">Requests</a></li>
+						<li><a href="elements.html">Elements</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -25,19 +25,102 @@
 			<div id="wrapper">
 
 				<!-- Main -->
-                <header class="search">
-                    <form>
-                        <img class="search-icon" src="assets\css\images\Search_Icon.svg.png" width="70px" height="65px">
-                        <input placeholder="Search" type="text">
-                        <input type = "submit" value="확인">
-                    </form>
-                    
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">LET YOU INTRODUCE HOT PLACES</h1>
+							<div id="map" style="width: 1160px;height: 600px;"></div>
+							<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b8fba23a7a5816b3d1a32e9a520053c7"></script>
+							<script>
+								var markers = [
+									{
+										position: new kakao.maps.LatLng(37.6022717894293, 126.95540441409884)
+									},
+									{
+										position: new kakao.maps.LatLng(37.6022717894293, 126.95540441409884), 
+										text: '텍스트를 표시할 수 있어요!' // text 옵션을 설정하면 마커 위에 텍스트를 함께 표시할 수 있습니다     
+									}
+								];
+								var container = document.getElementById('map');
+								var options = {
+									center: new kakao.maps.LatLng(37.6022717894293, 126.95540441409884),
+									level: 4
+								
+								};
+								//지도 생성 코드
+								var map = new kakao.maps.Map(container, options);
+								//마커 표시될 위치
+                                var markerPosition  = new kakao.maps.LatLng(37.6022717894293, 126.95540441409884); 
+								// 마커 생성
+								var marker = new kakao.maps.Marker({
+									position: markerPosition
+								});
+								//마커 표시되게 설정
+								marker.setMap(map);
 
-                </header>
+								// 마커를 표시할 위치와 title 객체 배열입니다 
+								var positions = [
+									{
+										title: '아마스빈', 
+										latlng: new kakao.maps.LatLng(37.60116145526191, 126.95576745306619 )
+									},
+									{
+										title: '커피니', 
+										latlng: new kakao.maps.LatLng(37.60099061248566, 126.9566989721551)
+									},
+									{
+										title: '카페드림', 
+										latlng: new kakao.maps.LatLng(37.60121513808198, 126.95477371709092)
+									},
+									{
+										title: '쥬씨',
+										latlng: new kakao.maps.LatLng(37.60099256935574, 126.955900612763  )
+									},
+								
+								];
+
+								// 마커 이미지의 이미지 주소
+								var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+									
+								for (var i = 0; i < positions.length; i ++) {
+									
+									// 마커 이미지의 이미지 크기 
+									var imageSize = new kakao.maps.Size(24, 35); 
+									
+									// 마커 이미지를 생성  
+									var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
+									
+									// 마커를 생성
+									var marker = new kakao.maps.Marker({
+										map: map, // 마커를 표시할 지도
+										position: positions[i].latlng, // 마커를 표시할 위치
+										title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됨
+										image : markerImage // 마커 이미지 
+									});
+								}
+
+								// 마커를 클릭했을 때 마커 위에 표시할 인포윈도우를 생성합니다
+								var iwContent = '<div style="padding:5px;">Hello World!</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+									iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+
+								// 인포윈도우를 생성합니다
+								var infowindow = new kakao.maps.InfoWindow({
+									content : iwContent,
+									removable : iwRemoveable
+								});
+
+								// 마커에 클릭이벤트를 등록합니다
+								kakao.maps.event.addListener(marker, 'click', function() {
+									// 마커 위에 인포윈도우를 표시합니다
+									infowindow.open(map, marker);  
+								});
+
+						</script> 
+						</div>
+					</section>
+
 
 
 			</div>
-
 
 		<!-- Footer -->
 			<footer id="footer" class="wrapper alt">

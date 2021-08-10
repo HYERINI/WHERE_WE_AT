@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class WhereweatConfig(AppConfig):
+class AccountsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'whereweat'
+    name = 'accounts'
